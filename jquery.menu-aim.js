@@ -310,13 +310,13 @@
          * Hook up initial menu events
          */
         $menu
-            .mouseleave(mouseleaveMenu)
+            .on('mouseleave', mouseleaveMenu)
             .find(options.rowSelector)
-                .mouseenter(mouseenterRow)
-                .mouseleave(mouseleaveRow)
-                .click(clickRow);
+                .on('mouseenter', mouseenterRow)
+                .on('mouseleave', mouseleaveRow)
+                .on('click', clickRow);
 
-        $(document).mousemove(mousemoveDocument);
+        $(document).on('mousemove', mousemoveDocument);
 
     };
 })(jQuery);
